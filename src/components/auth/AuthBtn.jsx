@@ -7,7 +7,7 @@ function AuthBtn() {
   const [password, setPassword] = useState("");
 
   const login = () => {
-    if (password != "samin123%") {
+    if (password != "test123%") {
       alert("Incorrect password");
     } else {
       setLoginForm(false);
@@ -35,11 +35,14 @@ function AuthBtn() {
       {loginForm && (
         <form
           className="w-full max-w-md bg-white-500 p-5 rounded-xl border-4 border-neutral-200"
-          onSubmit={(e) => {e.preventDefault(); login()}}
+          onSubmit={(e) => {
+            e.preventDefault();
+            login();
+          }}
         >
           <input
             type="text"
-            placeholder="password"
+            placeholder="Password: test123%"
             className="w-full max-w-md bg-white-500 py-2 px-3 rounded-xl border-4 border-neutral-200 text-xl text-neutral-900 outline-none focus:border-slate-300"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
